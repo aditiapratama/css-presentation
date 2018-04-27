@@ -120,7 +120,7 @@
   }
   
   .bg-image {
-    background: 50% 50%/cover url(img/_J4A1998.JPG) no-repeat;
+    background: 50% 50%/cover url(img/bg.JPG) no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,7 +138,7 @@
     justify-content: space-between;
 }
   .img-01{
-    background: 50% 25%/cover url(img/’j«‚P.png) no-repeat;
+    background: 50% 25%/cover url(img/image01.png) no-repeat;
     width: 50%;
     /* text-align: right; */
     position: absolute;
@@ -149,7 +149,7 @@
   }
 
   .img-02{
-    background: 50% 25%/cover url(img/_J4A0039@0,33x.png) no-repeat;
+    background: 50% 25%/cover url(img/image02.png) no-repeat;
     width: 50%;
     /* text-align: right; */
     position: absolute;
