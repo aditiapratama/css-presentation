@@ -1,0 +1,163 @@
+/* RESET CSS */
+
+*, *::after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* BACKGROUND */
+
+.bg-image {
+  background-image: url("../img/bg.JPG");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  animation-name: bg-anim;
+  animation-duration: 10s;
+  position: relative;
+  transform-origin: center center;
+}
+
+@keyframes bg-anim {
+  0% {
+    background-size: 105%;
+  }
+  10% {
+    background-size: 110%;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+  }
+  35% {
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+  }
+  40% {
+    background-size: 110%;
+    -webkit-filter: blur(0);
+    -moz-filter: blur(0);
+    -o-filter: blur(0);
+    -ms-filter: blur(0);
+    filter: blur(0);
+  }
+  65% {
+    -webkit-filter: blur(0);
+    -moz-filter: blur(0);
+    -o-filter: blur(0);
+    -ms-filter: blur(0);
+    filter: blur(0);
+  }
+  70% {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+  }
+  80% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+.intro {
+  height: 125%;
+  min-width: 50%;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  opacity: 0;
+  animation-duration: 1800ms;
+}
+
+.intro.right {
+  right: 0;
+  object-position: right;
+  animation-name: slide-from-left, fade;
+}
+
+.intro.left {
+  left: 0;
+  object-position: left;
+  animation-name: slide-from-right, fade;
+}
+
+#big-img-01 {
+  animation-delay: 600ms;
+}
+
+#big-img-02 {
+  animation-delay: 1200ms;
+}
+
+#big-img-03 {
+  animation-delay: 1800ms;
+}
+
+#big-img-04 {
+  animation-delay: 2400ms;
+}
+
+#big-img-05 {
+  animation-delay: 3000ms;
+}
+
+@keyframes slide-from-left {
+  0% {
+    transform: scale(1, 1) translateX(0);
+  }
+  80% {
+    transform: scale(1.05, 1.05) translateX(5%);
+  }
+  100% {
+    transform: scale(1.05, 1.05) translateX(5%);
+  }
+}
+
+@keyframes slide-from-right {
+  0% {
+    transform: scale(1, 1) translateX(-5%);
+  }
+  80% {
+    transform: scale(1.05, 1.05) translateX(-10%);
+  }
+  100% {
+    transform: scale(1.05, 1.05) translateX(-10%);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
