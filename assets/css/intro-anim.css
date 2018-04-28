@@ -42,6 +42,7 @@ img {
   animation-name: bg-anim;
   animation-duration: 10s;
   transform-origin: center center;
+  animation-fill-mode: forwards;
 }
 
 .intro {
@@ -140,13 +141,14 @@ img {
   animation-delay: 8600ms;
 }
 
-.overboard .row.no-cover {
-  background-size: contain;
+.overboard .row#main {
+  background-size: auto;
 }
 
 .overboard .row > img {
   visibility: hidden;
   display: block;
+  width: 100%;
 }
 
 .overboard #row-1 {
