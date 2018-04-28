@@ -12,9 +12,11 @@
 }
 
 .container {
+  min-height: 500px;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 /* BACKGROUND */
