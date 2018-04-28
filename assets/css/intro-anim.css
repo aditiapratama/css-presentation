@@ -39,6 +39,8 @@ img {
 .bg-image > img {
   height: 100%;
   width: 100%;
+  object-fit: cover;
+  object-position: center;
   animation-name: bg-anim;
   animation-duration: 10s;
   transform-origin: center center;
