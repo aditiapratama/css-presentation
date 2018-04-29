@@ -48,10 +48,10 @@ img {
 }
 
 .intro {
-  height: 125%;
+  height: 100%;
   min-width: 50%;
   position: absolute;
-  object-fit: cover;
+  object-fit: contain;
   top: 0;
   opacity: 0;
   animation-duration: 2700ms;
