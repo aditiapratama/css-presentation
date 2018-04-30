@@ -1,3 +1,6 @@
+// CHANGE THIS VARIABLE AS YOUR PREFERENCE
+var redirectURL = 'http://example.com/';
+
 setTimeout( () => {
   var m1 = document.getElementById('row-4');
   var m2 = document.getElementById('main');
@@ -20,11 +23,10 @@ var imgs = document.images,
 function incrementCounter() {
   counter++;
   if ( counter === len ) {
-      console.log( 'All images loaded!' );
       var root = document.getElementById('container');
       root.classList.remove('preload');
       setTimeout( () => {
-        window.location.href = 'http://example.com/';
+        window.location.href = redirectURL;
       }, 13000)
   }
 }
