@@ -23,5 +23,8 @@ function incrementCounter() {
       console.log( 'All images loaded!' );
       var root = document.getElementById('container');
       root.classList.remove('preload');
+      setTimeout( () => {
+        window.location.href = 'http://example.com/';
+      }, 13000)
   }
 }
