@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="assets/css/intro-anim.css">
+    <link rel="stylesheet" href="assets/css/spinner.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/velocity.min.js"></script>
+    <script src="assets/js/velocity.ui.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -45,7 +49,7 @@
             <span id="upper">Lorem ipsum</span>
             <span id="lower">Lorem ipsum</span>
         </div>
-        <div class="overboard">
+        <!-- <div class="overboard">
             <div class="row" id="row-1">
                 <img src="assets/img/row01.png">
             </div>
@@ -66,6 +70,113 @@
             </div>
             <div class="row" id="row-7">
                 <img src="assets/img/row07.png">
+            </div>
+        </div> -->
+        <div class="mosaic">
+            <div class="row" id="row-1">
+                <img src="assets/img/row 1/1-1.png" class="b5">
+                <img src="assets/img/row 1/1-2.png" class="b8">
+                <img src="assets/img/row 1/1-3.png" class="b3">
+                <img src="assets/img/row 1/1-4.png" class="b2">
+                <img src="assets/img/row 1/1-5.png" class="b11">
+                <img src="assets/img/row 1/1-6.png" class="b12">
+                <img src="assets/img/row 1/1-7.png" class="b3">
+                <img src="assets/img/row 1/1-8.png" class="b8">
+                <img src="assets/img/row 1/1-9.png" class="b9">
+                <img src="assets/img/row 1/1-10.png" class="b7">
+                <img src="assets/img/row 1/1-11.png" class="b8">
+                <img src="assets/img/row 1/1-12.png" class="b3">
+                <img src="assets/img/row 1/1-13.png" class="b2">
+                <img src="assets/img/row 1/1-14.png" class="b5">
+                <img src="assets/img/row 1/1-15.png" class="b11">
+            </div>
+            <div class="row" id="row-2">
+                <img src="assets/img/row 2/2-1.png" class="b11">
+                <img src="assets/img/row 2/2-2.png" class="b7">
+                <img src="assets/img/row 2/2-3.png" class="b2">
+                <img src="assets/img/row 2/2-4.png" class="b12">
+                <img src="assets/img/row 2/2-5.png" class="b7">
+                <img src="assets/img/row 2/2-6.png" class="b5">
+                <img src="assets/img/row 2/2-7.png" class="b10">
+                <img src="assets/img/row 2/2-8.png" class="b3">
+                <img src="assets/img/row 2/2-9.png" class="b9">
+                <img src="assets/img/row 2/2-10.png" class="b8">
+                <img src="assets/img/row 2/2-11.png" class="b9">
+            </div>
+            <div class="row" id="row-3">
+                <img src="assets/img/row 3/3-1.png" class="b12">
+                <img src="assets/img/row 3/3-2.png" class="b9">
+                <img src="assets/img/row 3/3-3.png" class="b6">
+                <img src="assets/img/row 3/3-4.png" class="b12">
+                <img src="assets/img/row 3/3-5.png" class="b6">
+                <img src="assets/img/row 3/3-6.png" class="b3">
+                <img src="assets/img/row 3/3-7.png" class="b1">
+                <img src="assets/img/row 3/3-8.png" class="b8">
+                <img src="assets/img/row 3/3-9.png" class="b8">
+                <img src="assets/img/row 3/3-10.png" class="b4">
+                <img src="assets/img/row 3/3-11.png" class="b10">
+                <img src="assets/img/row 3/3-12.png" class="b3">
+                <img src="assets/img/row 3/3-13.png" class="b12">
+                <img src="assets/img/row 3/3-14.png" class="b11">
+                <img src="assets/img/row 3/3-15.png" class="b3">
+            </div>
+            <div class="row main" id="row-4">
+                <img src="assets/img/row 4/4-1.png" class="b9">
+                <img src="assets/img/row 4/4-2.png" class="b12">
+                <img src="assets/img/row 4/4-3.png" class="b6">
+                <img src="assets/img/row 4/4-4.png" class="b11">
+                <img src="assets/img/row 4/4-5.png" class="b10" id="main">
+                <img src="assets/img/row 4/4-6.png" class="b1">
+                <img src="assets/img/row 4/4-7.png" class="b11">
+                <img src="assets/img/row 4/4-8.png" class="b3">
+                <img src="assets/img/row 4/4-9.png" class="b8">
+            </div>
+            <div class="row" id="row-5">
+                <img src="assets/img/row 5/5-1.png" class="b4">
+                <img src="assets/img/row 5/5-2.png" class="b5">
+                <img src="assets/img/row 5/5-3.png" class="b9">
+                <img src="assets/img/row 5/5-4.png" class="b11">
+                <img src="assets/img/row 5/5-5.png" class="b5">
+                <img src="assets/img/row 5/5-6.png" class="b12">
+                <img src="assets/img/row 5/5-7.png" class="b4">
+                <img src="assets/img/row 5/5-8.png" class="b10">
+                <img src="assets/img/row 5/5-9.png" class="b8">
+                <img src="assets/img/row 5/5-10.png" class="b12">
+                <img src="assets/img/row 5/5-11.png" class="b2">
+                <img src="assets/img/row 5/5-12.png" class="b11">
+                <img src="assets/img/row 5/5-13.png" class="b8">
+                <img src="assets/img/row 5/5-14.png" class="b2">
+                <img src="assets/img/row 5/5-15.png" class="b11">
+            </div>
+            <div class="row" id="row-6">
+                <img src="assets/img/row 6/6-1.png" class="b12">
+                <img src="assets/img/row 6/6-2.png" class="b5">
+                <img src="assets/img/row 6/6-3.png" class="b12">
+                <img src="assets/img/row 6/6-4.png" class="b3">
+                <img src="assets/img/row 6/6-5.png" class="b9">
+                <img src="assets/img/row 6/6-6.png" class="b4">
+                <img src="assets/img/row 6/6-7.png" class="b10">
+                <img src="assets/img/row 6/6-8.png" class="b3">
+                <img src="assets/img/row 6/6-9.png" class="b11">
+                <img src="assets/img/row 6/6-10.png" class="b9">
+                <img src="assets/img/row 6/6-11.png" class="b6">
+            </div>
+            <div class="row" id="row-7">
+                <img src="assets/img/row 7/7-1.png" class="b7">
+                <img src="assets/img/row 7/7-2.png" class="b5">
+                <img src="assets/img/row 7/7-3.png" class="b2">
+                <img src="assets/img/row 7/7-4.png" class="b4">
+                <img src="assets/img/row 7/7-5.png" class="b10">
+                <img src="assets/img/row 7/7-6.png" class="b2">
+                <img src="assets/img/row 7/7-7.png" class="b12">
+                <img src="assets/img/row 7/7-8.png" class="b2">
+                <img src="assets/img/row 7/7-9.png" class="b6">
+                <img src="assets/img/row 7/7-10.png" class="b4">
+                <img src="assets/img/row 7/7-11.png" class="b3">
+                <img src="assets/img/row 7/7-12.png" class="b7">
+                <img src="assets/img/row 7/7-13.png" class="b2">
+                <img src="assets/img/row 7/7-14.png" class="b7">
+                <img src="assets/img/row 7/7-15.png" class="b2">
             </div>
         </div>
     </div>

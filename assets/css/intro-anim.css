@@ -70,10 +70,12 @@ img {
   width: 100%;
   object-fit: cover;
   object-position: center;
-  animation-name: bg-anim;
+  /* animation-name: bg-anim; */
   animation-duration: 10s;
   transform-origin: center center;
   animation-fill-mode: forwards;
+  -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 
 .intro {
@@ -133,7 +135,9 @@ img {
 
 .text > * {
   opacity: 0;
-  font-size: 2rem;
+  font-size: 3.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 200;
   text-align: center;
   animation-name: simple-fade;
   animation-duration: 5000ms;
@@ -146,75 +150,54 @@ img {
   animation-delay: 5400ms;
 }
 
-.overboard {
+.mosaic {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
   display: flex;
   flex-direction: column;
-  opacity: 0;
+  justify-content: center;
   animation-name: zoom-in, simple-fade;
   animation-duration: 2500ms;
   animation-delay: 8600ms;
   animation-fill-mode: forwards;
-  transform: scale(1.2, 1.2);
-  z-index: 100;
+  transform-origin: center center;
 }
 
-.overboard .row {
-  height: calc(100vh/7);
-  background-repeat: repeat-x;
-  background-position: center;
-  background-size: cover;
+.mosaic .row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: nowrap;
+  height: calc(100%/8);
   animation-duration: 2500ms;
   animation-delay: 8600ms;
 }
 
-.overboard .row#main {
-  background-size: auto;
+.mosaic .row.main {
+  height: calc(100%*2/8);
 }
 
-.overboard .row > img {
-  visibility: hidden;
-  display: block;
-  width: 100%;
+.mosaic .row img {
+  height: 100%;
+  width: auto;
+  opacity: 0;
 }
 
-.overboard #row-1 {
-  background-image: url("../img/row01.png");
+.mosaic #row-1,
+.mosaic #row-3,
+.mosaic #row-5,
+.mosaic #row-7 {
   animation-name: to-left;
 }
 
-.overboard #row-2 {
-  background-image: url("../img/row02.png");
+.mosaic #row-2,
+.mosaic #row-4,
+.mosaic #row-6 {
   animation-name: to-right;
-}
-
-.overboard #row-3 {
-  background-image: url("../img/row03.png");
-  animation-name: to-left;
-}
-
-.overboard #row-4 {
-  background-image: url("../img/row04.png");
-  animation-name: to-right;
-}
-
-.overboard #row-5 {
-  background-image: url("../img/row05.png");
-  animation-name: to-left;
-}
-
-.overboard #row-6 {
-  background-image: url("../img/row06.png");
-  animation-name: to-right;
-}
-
-.overboard #row-7 {
-  background-image: url("../img/row07.png");
-  animation-name: to-left;
 }
 
 /* KEYFRAMES */
@@ -248,10 +231,10 @@ img {
 
 @keyframes text-fade {
   0% {
-    opacity: 1;
+    opacity: .8;
   }
   80% {
-    opacity: 1;
+    opacity: .8;
   }
   100% {
     opacity: 0;
@@ -311,10 +294,10 @@ img {
 
 @keyframes bg-anim {
   0% {
-    transform: scale(1.05, 1.05);
+    transform: scale(1.15, 1.15);
   }
   25% {
-    transform: scale(1.1, 1.1);
+    transform: scale(1.3, 1.3);
     -webkit-filter: blur(5px);
     -moz-filter: blur(5px);
     -o-filter: blur(5px);
@@ -329,7 +312,7 @@ img {
     filter: blur(4px);
   }
   55% {
-    transform: scale(1.1, 1.1);
+    transform: scale(1.3, 1.3);
     -webkit-filter: blur(0);
     -moz-filter: blur(0);
     -o-filter: blur(0);
@@ -351,10 +334,10 @@ img {
     filter: blur(5px);
   }
   95% {
-    transform: scale(1, 1);
+    transform: scale(1.15, 1.15);
   }
   100% {
-    transform: scale(1, 1);
+    transform: scale(1.15, 1.15);
   }
 }
 
@@ -370,142 +353,4 @@ img {
   .intro.right.grandma {
     right: -25%;
   }
-}
-
-/* SPINKIT */
-
-.sk-fading-circle {
-  margin: 100px auto;
-  width: 40px;
-  height: 40px;
-  position: relative;
-}
-
-.sk-fading-circle .sk-circle {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.sk-fading-circle .sk-circle:before {
-  content: '';
-  display: block;
-  margin: 0 auto;
-  width: 15%;
-  height: 15%;
-  background-color: #333;
-  border-radius: 100%;
-  -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
-          animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
-}
-.sk-fading-circle .sk-circle2 {
-  -webkit-transform: rotate(30deg);
-      -ms-transform: rotate(30deg);
-          transform: rotate(30deg);
-}
-.sk-fading-circle .sk-circle3 {
-  -webkit-transform: rotate(60deg);
-      -ms-transform: rotate(60deg);
-          transform: rotate(60deg);
-}
-.sk-fading-circle .sk-circle4 {
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-.sk-fading-circle .sk-circle5 {
-  -webkit-transform: rotate(120deg);
-      -ms-transform: rotate(120deg);
-          transform: rotate(120deg);
-}
-.sk-fading-circle .sk-circle6 {
-  -webkit-transform: rotate(150deg);
-      -ms-transform: rotate(150deg);
-          transform: rotate(150deg);
-}
-.sk-fading-circle .sk-circle7 {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-.sk-fading-circle .sk-circle8 {
-  -webkit-transform: rotate(210deg);
-      -ms-transform: rotate(210deg);
-          transform: rotate(210deg);
-}
-.sk-fading-circle .sk-circle9 {
-  -webkit-transform: rotate(240deg);
-      -ms-transform: rotate(240deg);
-          transform: rotate(240deg);
-}
-.sk-fading-circle .sk-circle10 {
-  -webkit-transform: rotate(270deg);
-      -ms-transform: rotate(270deg);
-          transform: rotate(270deg);
-}
-.sk-fading-circle .sk-circle11 {
-  -webkit-transform: rotate(300deg);
-      -ms-transform: rotate(300deg);
-          transform: rotate(300deg); 
-}
-.sk-fading-circle .sk-circle12 {
-  -webkit-transform: rotate(330deg);
-      -ms-transform: rotate(330deg);
-          transform: rotate(330deg); 
-}
-.sk-fading-circle .sk-circle2:before {
-  -webkit-animation-delay: -1.1s;
-          animation-delay: -1.1s; 
-}
-.sk-fading-circle .sk-circle3:before {
-  -webkit-animation-delay: -1s;
-          animation-delay: -1s; 
-}
-.sk-fading-circle .sk-circle4:before {
-  -webkit-animation-delay: -0.9s;
-          animation-delay: -0.9s; 
-}
-.sk-fading-circle .sk-circle5:before {
-  -webkit-animation-delay: -0.8s;
-          animation-delay: -0.8s; 
-}
-.sk-fading-circle .sk-circle6:before {
-  -webkit-animation-delay: -0.7s;
-          animation-delay: -0.7s; 
-}
-.sk-fading-circle .sk-circle7:before {
-  -webkit-animation-delay: -0.6s;
-          animation-delay: -0.6s; 
-}
-.sk-fading-circle .sk-circle8:before {
-  -webkit-animation-delay: -0.5s;
-          animation-delay: -0.5s; 
-}
-.sk-fading-circle .sk-circle9:before {
-  -webkit-animation-delay: -0.4s;
-          animation-delay: -0.4s;
-}
-.sk-fading-circle .sk-circle10:before {
-  -webkit-animation-delay: -0.3s;
-          animation-delay: -0.3s;
-}
-.sk-fading-circle .sk-circle11:before {
-  -webkit-animation-delay: -0.2s;
-          animation-delay: -0.2s;
-}
-.sk-fading-circle .sk-circle12:before {
-  -webkit-animation-delay: -0.1s;
-          animation-delay: -0.1s;
-}
-
-@-webkit-keyframes sk-circleFadeDelay {
-  0%, 39%, 100% { opacity: 0; }
-  40% { opacity: 1; }
-}
-
-@keyframes sk-circleFadeDelay {
-  0%, 39%, 100% { opacity: 0; }
-  40% { opacity: 1; } 
 }
