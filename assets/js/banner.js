@@ -1,31 +1,11 @@
 // CHANGE THIS VARIABLE AS YOUR PREFERENCE
 var redirectURL = 'http://example.com/';
 
-$(function () {
-  // CHECK IF ALL IMAGES ARE LOADED
-
-  var imgs = document.images,
-      len = imgs.length,
-      counter = 0;
-
-  [].forEach.call( imgs, function( img ) {
-    img.addEventListener( 'load', incrementCounter, false );
-  } );
-  
-  function incrementCounter() {
-    counter++;
-    if ( counter === len ) {
-      checkImage();
-      var root = document.getElementById('container');
-      root.classList.remove('preload');
-      animateBG();
-      animateMosaic();
-      setTimeout( () => {
-        window.location.href = redirectURL;
-      }, 16000)
-    }
-  }
-
+$(window).bind('load', function () {
+  $('#container').removeClass('preload');
+  checkImage();
+  animateBG();
+  animateMosaic();
 });
 
 function checkImage () {
@@ -37,23 +17,22 @@ function checkImage () {
 }
 
 function animateMosaic () {
-  var $1 = $('.b1');
-  var $2 = $('.b2');
-  var $3 = $('.b3');
-  var $4 = $('.b4');
-  var $5 = $('.b5');
-  var $6 = $('.b6');
-  var $7 = $('.b7');
-  var $8 = $('.b8');
-  var $9 = $('.b9');
-  var $10 = $('.b10');
-  var $11 = $('.b11');
-  var $12 = $('.b12');
+  var $1 = $('.b1'),
+      $2 = $('.b2'),
+      $3 = $('.b3'),
+      $4 = $('.b4'),
+      $5 = $('.b5'),
+      $6 = $('.b6'),
+      $7 = $('.b7'),
+      $8 = $('.b8'),
+      $9 = $('.b9'),
+      $10 = $('.b10'),
+      $11 = $('.b11'),
+      $12 = $('.b12');
   
   var duration = 240;
   var $delay = $('.mosaic').css('animation-delay');
   $delay = css_time_to_milliseconds($delay);
-  console.log($delay + duration);
 
   var sequence = [
     { e: $1, p: { opacity: 1 }, o: { delay: $delay, duration: duration }},
@@ -76,50 +55,10 @@ function animateMosaic () {
 function animateBG () {
   var $bg = $('.bg-image>img');
   var sequence = [
-    {
-      e: $bg,
-      p: {
-        scaleX: 1.3,
-        scaleY: 1.3,
-        blur: 5
-      },
-      o: {
-        duration: 3500
-      }
-    },
-    {
-      e: $bg,
-      p: {
-        scaleX: 1.3,
-        scaleY: 1.3,
-        blur: 1
-      },
-      o: {
-        duration: 1000
-      }
-    },
-    {
-      e: $bg,
-      p: {
-        scaleX: 1.15,
-        scaleY: 1.15,
-        blur: 1
-      },
-      o: {
-        duration: 3500
-      }
-    },
-    {
-      e: $bg,
-      p: {
-        scaleX: 1.3,
-        scaleY: 1.3,
-        blur: 2
-      },
-      o: {
-        duration: 1200
-      }
-    }
+    { e: $bg, p: { scaleX: 1.3, scaleY: 1.3, blur: 5 }, o: { duration: 3500 } },
+    { e: $bg, p: { scaleX: 1.3, scaleY: 1.3, blur: 1 }, o: { duration: 1000 } },
+    { e: $bg, p: { scaleX: 1.15, scaleY: 1.15, blur: 1 }, o: { duration: 3500 } },
+    { e: $bg, p: { scaleX: 1.3, scaleY: 1.3, blur: 2 }, o: { duration: 1200 } }
   ];
 
   $.Velocity.RunSequence(sequence);
