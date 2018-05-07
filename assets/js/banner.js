@@ -6,9 +6,12 @@ $(window).bind('load', function () {
   checkImage();
   animateBG();
   animateMosaic();
-  setTimeout(() => {
-    location.href = redirectURL;
-  }, 16000);
+  console.log(window.innerWidth);
+  console.log(window.innerHeight);
+  console.log(window.innerWidth/window.innerHeight);
+  // setTimeout(() => {
+  //   location.href = redirectURL;
+  // }, 16000);
 });
 
 function checkImage () {
