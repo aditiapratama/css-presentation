@@ -3,15 +3,15 @@ var redirectURL = 'http://example.com/';
 
 $(window).bind('load', function () {
   $('#container').removeClass('preload');
+  if ($(this).width() / $(this).height() > 1.77) {
+    cloneImages();
+  }
   checkImage();
   animateBG();
   animateMosaic();
-  console.log(window.innerWidth);
-  console.log(window.innerHeight);
-  console.log(window.innerWidth/window.innerHeight);
-  // setTimeout(() => {
-  //   location.href = redirectURL;
-  // }, 16000);
+  setTimeout(() => {
+    location.href = redirectURL;
+  }, 16000);
 });
 
 function checkImage () {
@@ -19,6 +19,16 @@ function checkImage () {
   var m2 = $('#main');
   if (m2.height() > m1.height()) {
     m2.css('object-fit', 'auto');
+  }
+}
+
+function cloneImages () {
+  var mosaic = $('.mosaic').children();
+  for (var i = 1; i <= mosaic.length; i++) {
+    var origin = $('#row-' + i).html();
+    for (var j = 0; j < 2; j++) {
+      $('#row-' + i).append(origin);
+    }
   }
 }
 
