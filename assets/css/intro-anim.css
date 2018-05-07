@@ -46,6 +46,7 @@ img {
 
 .loader {
   opacity: 0;
+  visibility: hidden;
   transition: all 1000ms;
   position: absolute;
   top: 0;
@@ -182,7 +183,7 @@ img {
 }
 
 .mosaic .row.main {
-  height: calc(100%*2/8);
+  height: calc(100%/5);
 }
 
 .mosaic .row img {

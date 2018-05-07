@@ -9,9 +9,9 @@ $(window).bind('load', function () {
   checkImage();
   animateBG();
   animateMosaic();
-  setTimeout(() => {
-    location.href = redirectURL;
-  }, 16000);
+  // setTimeout(() => {
+  //   location.href = redirectURL;
+  // }, 16000);
 });
 
 function checkImage () {
