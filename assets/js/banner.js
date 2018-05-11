@@ -9,9 +9,7 @@ $(window).bind('load', function () {
   checkImage();
   animateBG();
   animateMosaic();
-  // setTimeout(() => {
-  //   location.href = redirectURL;
-  // }, 16000);
+  // redirectTo(redirectURL);
 });
 
 function checkImage () {
@@ -24,7 +22,7 @@ function checkImage () {
 
 function cloneImages () {
   var mosaic = $('.mosaic').children();
-  for (var i = 1; i <= mosaic.length; i++) {
+  for (var i = 2; i <= mosaic.length+1; i++) {
     var origin = $('#row-' + i).html();
     for (var j = 0; j < 2; j++) {
       $('#row-' + i).append(origin);
@@ -46,8 +44,8 @@ function animateMosaic () {
       $11 = $('.b11'),
       $12 = $('.b12');
   
-  var duration = 300;
-  var duration2 = 50;
+  var duration = 350;
+  var duration2 = 250;
   var $delay = $('.mosaic').css('animation-delay');
   $delay = css_time_to_milliseconds($delay);
   $increment = duration/12;
@@ -103,4 +101,10 @@ function css_time_to_milliseconds(time_string) {
   }
 
   return milliseconds;
+}
+
+function redirectTo(URL) {
+  setTimeout(() => {
+    location.href = URL;
+  }, 16000);
 }
