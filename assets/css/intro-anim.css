@@ -197,22 +197,22 @@ img {
 .mosaic #row-3,
 .mosaic #row-5,
 .mosaic #row-7 {
-  animation-name: to-left;
-  transform: translateX(15%);
+  animation-name: to-right;
+  transform: translateX(-10%);
 }
 
 .mosaic #row-2,
 .mosaic #row-4,
 .mosaic #row-6 {
-  animation-name: to-right;
-  transform: translateX(-15%);
+  animation-name: to-left;
+  transform: translateX(10%);
 }
 
 /* KEYFRAMES */
 
 @keyframes to-right {
   from {
-    transform: translateX(-15%);
+    transform: translateX(-10%);
   }
   to {
     transform: translateX(0);
@@ -221,7 +221,7 @@ img {
 
 @keyframes to-left {
   from {
-    transform: translateX(15%);
+    transform: translateX(10%);
   }
   to {
     transform: translateX(0);

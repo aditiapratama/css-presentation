@@ -46,7 +46,7 @@ function animateMosaic () {
       $11 = $('.b11'),
       $12 = $('.b12');
   
-  var duration = 250;
+  var duration = 300;
   var duration2 = 50;
   var $delay = $('.mosaic').css('animation-delay');
   $delay = css_time_to_milliseconds($delay);
