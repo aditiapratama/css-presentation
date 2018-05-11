@@ -166,7 +166,7 @@ img {
   flex-direction: column;
   justify-content: center;
   animation-name: zoom-in, simple-fade;
-  animation-duration: 4000ms;
+  animation-duration: 3000ms;
   animation-delay: 8000ms;
   animation-fill-mode: forwards;
   transform-origin: center center;
