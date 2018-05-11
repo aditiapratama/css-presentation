@@ -46,23 +46,24 @@ function animateMosaic () {
       $11 = $('.b11'),
       $12 = $('.b12');
   
-  var duration = 240;
+  var duration = 250;
+  var duration2 = 50;
   var $delay = $('.mosaic').css('animation-delay');
   $delay = css_time_to_milliseconds($delay);
-
+  $increment = duration/12;
   var sequence = [
     { e: $1, p: { opacity: 1 }, o: { delay: $delay, duration: duration }},
-    { e: $2, p: { opacity: 1 }, o: { delay: 20, duration: duration, sequenceQueue: false }},
-    { e: $3, p: { opacity: 1 }, o: { delay: 40, duration: duration, sequenceQueue: false }},
-    { e: $4, p: { opacity: 1 }, o: { delay: 60, duration: duration, sequenceQueue: false }},
-    { e: $5, p: { opacity: 1 }, o: { delay: 80, duration: duration, sequenceQueue: false }},
-    { e: $6, p: { opacity: 1 }, o: { delay: 100, duration: duration, sequenceQueue: false }},
-    { e: $7, p: { opacity: 1 }, o: { delay: 120, duration: duration, sequenceQueue: false }},
-    { e: $8, p: { opacity: 1 }, o: { delay: 140, duration: duration, sequenceQueue: false }},
-    { e: $9, p: { opacity: 1 }, o: { delay: 160, duration: duration, sequenceQueue: false }},
-    { e: $10, p: { opacity: 1 }, o: { delay: 180, duration: duration, sequenceQueue: false }},
-    { e: $11, p: { opacity: 1 }, o: { delay: 200, duration: duration, sequenceQueue: false }},
-    { e: $12, p: { opacity: 1 }, o: { delay: 220, duration: duration, sequenceQueue: false }},
+    { e: $2, p: { opacity: 1 }, o: { delay: 1*$increment, duration: duration2, sequenceQueue: false }},
+    { e: $3, p: { opacity: 1 }, o: { delay: 2*$increment, duration: duration2, sequenceQueue: false }},
+    { e: $4, p: { opacity: 1 }, o: { delay: 3*$increment, duration: duration2, sequenceQueue: false }},
+    { e: $5, p: { opacity: 1 }, o: { delay: 4*$increment, duration: duration2, sequenceQueue: false }},
+    { e: $6, p: { opacity: 1 }, o: { delay: 5*$increment, duration: duration2, sequenceQueue: false }},
+    { e: $7, p: { opacity: 1 }, o: { delay: 6*$increment, duration: duration2, sequenceQueue: false }},
+    { e: $8, p: { opacity: 1 }, o: { delay: 7*$increment, duration: duration2, sequenceQueue: false }},
+    { e: $9, p: { opacity: 1 }, o: { delay: 8*$increment, duration: duration2, sequenceQueue: false }},
+    { e: $10, p: { opacity: 1 }, o: { delay: 9*$increment, duration: duration2, sequenceQueue: false }},
+    { e: $11, p: { opacity: 1 }, o: { delay: 10*$increment, duration: duration2, sequenceQueue: false }},
+    { e: $12, p: { opacity: 1 }, o: { delay: 11*$increment, duration: duration2, sequenceQueue: false }},
   ];
 
   $.Velocity.RunSequence(sequence);

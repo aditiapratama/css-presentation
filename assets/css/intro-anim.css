@@ -166,8 +166,8 @@ img {
   flex-direction: column;
   justify-content: center;
   animation-name: zoom-in, simple-fade;
-  animation-duration: 2500ms;
-  animation-delay: 8600ms;
+  animation-duration: 4000ms;
+  animation-delay: 8000ms;
   animation-fill-mode: forwards;
   transform-origin: center center;
 }
@@ -179,7 +179,8 @@ img {
   flex-wrap: nowrap;
   height: calc(100%/8);
   animation-duration: 2500ms;
-  animation-delay: 8600ms;
+  animation-delay: 8000ms;
+  animation-fill-mode: forwards;
 }
 
 .mosaic .row.main {
@@ -197,19 +198,21 @@ img {
 .mosaic #row-5,
 .mosaic #row-7 {
   animation-name: to-left;
+  transform: translateX(15%);
 }
 
 .mosaic #row-2,
 .mosaic #row-4,
 .mosaic #row-6 {
   animation-name: to-right;
+  transform: translateX(-15%);
 }
 
 /* KEYFRAMES */
 
 @keyframes to-right {
   from {
-    transform: translateX(-5%);
+    transform: translateX(-15%);
   }
   to {
     transform: translateX(0);
@@ -218,7 +221,7 @@ img {
 
 @keyframes to-left {
   from {
-    transform: translateX(5%);
+    transform: translateX(15%);
   }
   to {
     transform: translateX(0);
@@ -230,31 +233,9 @@ img {
     transform: scale(1, 1);
   }
   to {
-    transform: scale(1.2, 1.2);
+    transform: scale(1.5, 1.5);
   }
 }
-
-/* @media (min-aspect-ratio: 16/9) {
-  @keyframes zoom-in {
-    from {
-      transform: scale(1, 1);
-    }
-    to {
-      transform: scale(1.7, 1.7);
-    }
-  }
-}
-
-@media (min-aspect-ratio: 21/9) {
-  @keyframes zoom-in {
-    from {
-      transform: scale(1, 1);
-    }
-    to {
-      transform: scale(2, 2);
-    }
-  }
-} */
 
 @keyframes text-fade {
   0% {
