@@ -73,10 +73,17 @@ function animateBG () {
     { e: $bg, p: { scaleX: 1.3, scaleY: 1.3, blur: 5 }, o: { duration: 3500 } },
     { e: $bg, p: { scaleX: 1.3, scaleY: 1.3, blur: 1 }, o: { duration: 1000 } },
     { e: $bg, p: { scaleX: 1.15, scaleY: 1.15, blur: 1 }, o: { duration: 3500 } },
-    { e: $bg, p: { scaleX: 1.3, scaleY: 1.3, blur: 2 }, o: { duration: 1200 } }
+    { e: $bg, p: { scaleX: 1.3, scaleY: 1.3, blur: 2 }, o: { duration: 2500 } }
   ];
 
-  $.Velocity.RunSequence(sequence);
+  var sequenceMobile = [
+    { e: $bg, p: { scaleX: 1.6, scaleY: 1.6, blur: 5 }, o: { duration: 3500 } },
+    { e: $bg, p: { scaleX: 1.6, scaleY: 1.6, blur: 1 }, o: { duration: 1000 } },
+    { e: $bg, p: { scaleX: 1.3, scaleY: 1.3, blur: 1 }, o: { duration: 3500 } },
+    { e: $bg, p: { scaleX: 1.7, scaleY: 1.7, blur: 2 }, o: { duration: 2500 } }
+  ];
+  var windowWidth = $(window).width();
+  windowWidth > 768 ? $.Velocity.RunSequence(sequence) : $.Velocity.RunSequence(sequenceMobile);
 }
 
 function css_time_to_milliseconds(time_string) {
