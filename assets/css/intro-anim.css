@@ -69,6 +69,7 @@ img {
 
 .preload .loader {
   opacity: 1;
+  visibility: visible;
 }
 
 .bg-image > img {
